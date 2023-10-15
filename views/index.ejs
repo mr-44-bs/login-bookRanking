@@ -1,0 +1,35 @@
+<!DOCUTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="content-type"
+        content="text/html"; charset="UTF-8">
+        <title>Login</title>
+        <link rel='stylesheet' href ='/stylesheets/design.css' />
+    </head>
+    <br>
+    <body>
+        <center><h1>ログインページ</h1>
+    <br>
+        <p><%= title %></p>
+        <form method="post" action="/">
+            <table>
+                    <th>NAME</th>
+                        <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                    <th>パスワード</th>
+                        <td><input type="password" name="password"></td>
+            </tr>
+            <br>
+            <br>
+            </table>
+            <h3><input type="submit" value="login"></h3>
+        </form>
+        <br>
+            <form method="post" action="/add">
+            <a href="/add">アカウントの作成&gt;&gt;</a>
+            </form>
+        
+        </center>
+    </body>
+</html>

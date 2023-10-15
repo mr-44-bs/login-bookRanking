@@ -1,0 +1,124 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>管理</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <center>レンタル事業</center>
+  </head>
+  <body>
+    <h3>過去レンタル上位3件</h3>
+    <div role ="main">
+      <label for="絞り込み">絞り込み：</label>
+<select name="genre" id="genre">
+    <option value="">--選択--</option>
+    <option value="コード">コード</option>
+    <option value="タイトル">タイトル</option>
+    <option value="著者名">著者名</option>
+    <option value="価格">価格</option>
+    <option value="数量">数量</option>
+</select><br>
+<label for="並べ替え">並べ替え：</label>
+<select name="genre" id="genre">
+    <option value="">--選択--</option>
+    <option value="昇順">昇順</option>
+    <option value="降順">降順</option>　　　　　　　　　　　　　　　    
+    <input type="button" onclick="location.href='sale.ejs'" value="  再表示  "><br>
+</select><br>
+      <table>     
+        <tr>
+          <th>順位</th>
+          <th>商品ID</th>
+          <th>件数</th>
+        </tr>
+        <% for(var i = 0;  i < all[0].length;  i++) { %>
+          <tr>
+            <% var obj = all[0][i]; %>
+            <% var n = parseInt(i)+1; %>
+            <td><%= n %></td>
+            <td><%= obj.product_id %></td>
+            <td><%= obj.count %></td>              
+            </tr>
+          <% } %>
+      </table>
+    </div><br>
+    <h3>現在レンタル</h3>
+    <div role ="main">
+      <label for="絞り込み">絞り込み：</label>
+<select name="genre" id="genre">
+    <option value="">--選択--</option>
+    <option value="コード">コード</option>
+    <option value="タイトル">タイトル</option>
+    <option value="著者名">著者名</option>
+    <option value="価格">価格</option>
+    <option value="数量">数量</option>
+</select><br>
+<label for="並べ替え">並べ替え：</label>
+<select name="genre" id="genre">
+    <option value="">--選択--</option>
+    <option value="昇順">昇順</option>
+    <option value="降順">降順</option>　　　　　　　　　　　　　　　    
+    <input type="button" onclick="location.href='sale.ejs'" value="  再表示  "><br>
+</select><br>
+<table>     
+  <tr>
+    <th>商品ID</th>
+    <th>貸出日</th>
+    <th>貸出者ID</th>
+  </tr>
+  <% for(var i = 0;  i < all[1].length;  i++) { %>
+    <tr>
+      <% var obj = all[1][i]; %>
+      <% var n = parseInt(i)+1; %>
+      <td><%= obj.product_id %></td>
+      <td><%= obj.rental_date %></td>   
+      <td><%= obj.user_id %></td>            
+      </tr>
+    <% } %>
+  
+</table>
+    </div><br>
+    <h3>発売予定</h3>
+    <div role ="main">
+      <label for="絞り込み">絞り込み：</label>
+<select name="genre" id="genre">
+    <option value="">--選択--</option>
+    <option value="ID">発売日</option>
+    <option value="タイトル">タイトル</option>
+    <option value="著者名">著者名</option>
+    <option value="価格">価格</option>
+    <option value="数量">数量</option>
+</select><br>
+<label for="並べ替え">並べ替え：</label>
+<select name="genre" id="genre">
+    <option value="">--選択--</option>
+    <option value="昇順">昇順</option>
+    <option value="降順">降順</option>　　　　　　　　　　　　　　　    
+    <input type="button" onclick="location.href='sale.ejs'" value="  再表示  "><br>
+</select><br>
+<table>     
+  <tr>
+    <th>商品ID</th>
+    <th>発売日</th>
+  </tr>
+  <% for(var i = 0;  i < all[2].length;  i++) { %>
+    <tr>
+      <% var obj = all[2][i]; %>
+      <% var n = parseInt(i)+1; %>
+      <td><%= obj.product_id %></td>
+      <td><%= obj.release_date %></td>          
+      </tr>
+    <% } %>
+    <% for(var i = 0;  i < all[3].length;  i++) { %>
+      <tr>
+        <% var obj = all[3][i]; %>
+        <% var n = parseInt(i)+1; %>
+        <td><%= obj.product_id %></td>
+        <td><%= obj.release_date %></td>          
+        </tr>
+      <% } %>
+</table>
+    </div>
+  </body>
+</html>
